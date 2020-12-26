@@ -1,63 +1,30 @@
+import 'package:bytebank/screens/transferencia/lista.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(MaterialApp(
-        home: Scaffold(
+void main() => runApp(ByteBankApp());
 
-      body: ListaTransferencias(),
-
-      appBar: AppBar(
-        title: Text('Transferências'),
-      ),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
-      ),
-    )));
-
-class ListaTransferencias extends StatelessWidget {
+class ByteBankApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    return Column(
-        children: <Widget>[
-          Card(
-            child: ListTile(
-              leading: Icon(Icons.monetization_on),
-              title: Text('100,00'),
-              subtitle: Text('1000'),
-            ),
-          ),
-          Card(
-            child: ListTile(
-              leading: Icon(Icons.monetization_on),
-              title: Text('275,00'),
-              subtitle: Text('3000'),
-            ),
-          ),
-           Card(
-            child: ListTile(
-              leading: Icon(Icons.monetization_on),
-              title: Text('375,00'),
-              subtitle: Text('3000'),
-            ),
-          ),
-        ],
-      );
-  }
+   
+    return MaterialApp(
+      theme: ThemeData(
+        primaryColor: Colors.deepPurple[400],
   
+        accentColor: Colors.deepPurple[400],
+        buttonTheme: ButtonThemeData(
+          buttonColor: Colors.deepPurple[400],
+          textTheme: ButtonTextTheme.primary,
+        ),
+      ),
+        debugShowCheckedModeBanner: false,
+        home: ListaTransferencias(), );
+  }
 }
 
 
-class ItemTransferencia extends StatelessWidget{
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return Card(
-            child: ListTile(
-              leading: Icon(Icons.monetization_on),
-              title: Text('375,00'),
-              subtitle: Text('3000'),
-            ),
-          );
-  }
-  
-}
+
+
+
+
+
